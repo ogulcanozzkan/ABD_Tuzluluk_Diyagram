@@ -38,20 +38,16 @@ st.subheader("2.Excel Dosyanızı Yükleyiniz")
 st.write("Verilen örnek excel dosyasına, verilerinizi girdikten sonra yükleyiniz. ")
 uploaded_file = st.file_uploader("Excel dosyanızı yükleyin", type=["xlsx", "xls"])
 if uploaded_file is not None:
-    try:
-        data = pd.read_excel(uploaded_file, header=0)
-        data["Name"] = data["Name"].astype(str)
-        data["Sodyum(mg/l)"] = data["Sodyum(mg/l)"].astype(float)
-        data["Kalsiyum(mg/L)"] = data["Kalsiyum(mg/L)"].astype(float)
-        data["Magnezyum(mg/l)"] = data["Magnezyum(mg/l)"].astype(float)
-        data["İletkenlik(µS/cm)"] = data["İletkenlik(µS/cm)"].astype(float)
-        data["SAR"] = data["Sodyum(mg/l)"] / (np.sqrt((data["Kalsiyum(mg/L)"] + data["Magnezyum(mg/l)"]) / 2))
-        st.success('Başarılı!', icon="✅")
-        st.subheader("3.Verilerinizi Kontrol Ediniz")
-        st.dataframe(data.head(200))
-    except Exception as e:
-        st.error("Dosya yükleme ve işleme sırasında bir hata oluştu.")
-        st.error(str(e))
+    data = pd.read_excel(uploaded_file, header=0)
+    data["Name"] = data["Name"].astype(str)
+    data["Sodyum(mg/l)"] = data["Sodyum(mg/l)"].astype(float)
+    data["Kalsiyum(mg/L)"] = data["Kalsiyum(mg/L)"].astype(float)
+    data["Magnezyum(mg/l)"] = data["Magnezyum(mg/l)"].astype(float)
+    data["İletkenlik(µS/cm)"] = data["İletkenlik(µS/cm)"].astype(float)
+    data["SAR"] = data["Sodyum(mg/l)"] / (np.sqrt((data["Kalsiyum(mg/L)"] + data["Magnezyum(mg/l)"]) / 2))
+    st.success('Başarılı!', icon="✅")
+    st.subheader("3.Verilerinizi Kontrol Ediniz")
+    st.dataframe(data.head(200))
 
 
 
