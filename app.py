@@ -39,7 +39,7 @@ st.write("Verilen örnek excel dosyasına, verilerinizi girdikten sonra yükleyi
 uploaded_file = st.file_uploader("Excel dosyanızı yükleyin", type=["xlsx"])
 data = pd.read_excel(uploaded_file, header=0, engine='openpyxl')
 if uploaded_file is not None:
-    data = pd.read_excel(uploaded_file,header=0)
+    data = pd.read_excel(uploaded_file,header=0,engine='openpyxl')
     data["Name"] = data["Name"].astype(str)
     data["Sodyum(mg/l)"] = data["Sodyum(mg/l)"].astype(float)
     data["Kalsiyum(mg/L)"] = data["Kalsiyum(mg/L)"].astype(float)
