@@ -1,0 +1,16 @@
+streamlit_option_menu
+grad-cam
+imageio
+numpy
+keras
+opencv-python-headless
+pandas
+streamlit-aggrid
+plotly
+tensorflow
+matplotlib
+imutils
+scikit-image
+streamlit
+scikit-learn
+Keras-Preprocessing
