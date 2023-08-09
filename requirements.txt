@@ -4,4 +4,4 @@ plotly==4.8.0
 matplotlib==3.4.3
 Pillow==8.0.0
 numpy==1.21.2
-openpyxl== 23.2.1
+openpyxl
