@@ -37,7 +37,7 @@ download_excel()
 st.subheader("2.Excel Dosyanızı Yükleyiniz")
 st.write("Verilen örnek excel dosyasına, verilerinizi girdikten sonra yükleyiniz. ")
 uploaded_file = st.file_uploader("Excel dosyanızı yükleyin", type=["xlsx"])
-data = pd.read_excel(uploaded_file, header=0, engine='openpyxl')
+data = pd.read_excel(uploaded_file, header=0)
 if uploaded_file is not None:
     data = pd.read_excel(uploaded_file,header=0,engine='openpyxl')
     data["Name"] = data["Name"].astype(str)
